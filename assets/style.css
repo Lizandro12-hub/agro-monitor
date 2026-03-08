@@ -1,0 +1,250 @@
+/* ============================================================
+   Agro Monitor UDLAP — Estilos globales
+   Paleta: fondo oscuro #1a1a1a / dorado #E8820C / texto claro
+   ============================================================ */
+
+/* ── Reset y base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #141414;
+    color: #E0D8C8;
+    font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+    background: linear-gradient(90deg, #1a1a1a 0%, #222 100%);
+    border-bottom: 2px solid #E8820C;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.navbar-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #E0D8C8;
+    letter-spacing: 0.5px;
+}
+.navbar-title span { color: #E8820C; }
+.navbar-actions { display: flex; gap: 14px; align-items: center; }
+.nav-btn {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    color: #C8B89A;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.nav-btn:hover { border-color: #E8820C; color: #E8820C; }
+
+/* ── Layout principal ── */
+.main-content {
+    padding: 20px 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ── Página título ── */
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #E0D8C8;
+    margin-bottom: 4px;
+}
+.page-title span { color: #E8820C; }
+.page-subtitle {
+    font-size: 12px;
+    color: #7a7060;
+    margin-bottom: 18px;
+}
+
+/* ── Tarjetas KPI ── */
+.kpi-card {
+    background: #1e1e1e;
+    border: 1px solid #2e2e2e;
+    border-radius: 6px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    height: 100%;
+}
+.kpi-card:hover {
+    border-color: #E8820C;
+    transform: translateY(-2px);
+}
+.kpi-label {
+    font-size: 11px;
+    color: #7a7060;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+.kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #F0E8D0;
+    line-height: 1.1;
+}
+.kpi-unit {
+    font-size: 11px;
+    color: #7a7060;
+    margin-left: 3px;
+}
+.kpi-change-pos {
+    font-size: 12px;
+    color: #5cb85c;
+    margin-top: 3px;
+}
+.kpi-change-neg {
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 3px;
+}
+.kpi-chart { margin-top: 8px; }
+
+/* ── Módulos del dashboard ── */
+.module-card {
+    background: #1e1e1e;
+    border: 1px solid #2e2e2e;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    height: 100%;
+}
+.module-card:hover { border-color: #E8820C; }
+.module-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E0D8C8;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.module-title a {
+    font-size: 11px;
+    color: #E8820C;
+    text-decoration: none;
+}
+.module-title a:hover { text-decoration: underline; }
+
+/* ── Tabla resumen ejecutivo ── */
+.exec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.exec-table th {
+    color: #7a7060;
+    font-weight: 500;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #2e2e2e;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+.exec-table td {
+    padding: 8px 8px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #E0D8C8;
+}
+.exec-table tr:last-child td { border-bottom: none; }
+.exec-table .val { font-weight: 600; color: #F5E8C0; }
+.exec-table .pos { color: #5cb85c; font-weight: 600; }
+.exec-table .neg { color: #d9534f; font-weight: 600; }
+.exec-table .impact { color: #E8820C; font-weight: 500; }
+
+/* ── Semáforo de riesgo ── */
+.riesgo-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.riesgo-moderado { background: #5a3a00; color: #E8820C; border: 1px solid #E8820C; }
+.riesgo-alto     { background: #4a1010; color: #d9534f; border: 1px solid #d9534f; }
+.riesgo-bajo     { background: #0a3a1a; color: #5cb85c; border: 1px solid #5cb85c; }
+
+/* ── Noticias ── */
+.noticia-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+.noticia-item:last-child { border-bottom: none; }
+.noticia-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E0D8C8;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.noticia-texto {
+    font-size: 12px;
+    color: #8a8070;
+    line-height: 1.5;
+}
+.arrow-up   { color: #5cb85c; }
+.arrow-down { color: #d9534f; }
+.arrow-neu  { color: #E8820C; }
+
+/* ── Footer ticker ── */
+.ticker-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    border-top: 1px solid #2e2e2e;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #8a8070;
+    display: flex;
+    gap: 32px;
+    overflow: hidden;
+}
+.ticker-item { white-space: nowrap; }
+.ticker-item span { color: #E8820C; font-weight: 600; }
+
+/* ── Gráficas Plotly — override fondo ── */
+.js-plotly-plot .plotly { background: transparent !important; }
+
+/* ── Links de navegación ── */
+a { color: inherit; text-decoration: none; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E8820C; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .main-content { padding: 12px; }
+    .page-title { font-size: 20px; }
+    .kpi-value { font-size: 18px; }
+}
